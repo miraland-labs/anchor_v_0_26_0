@@ -7,7 +7,7 @@ use solana_sdk::pubkey::Pubkey;
 use std::fmt::Write;
 
 pub fn default_program_id() -> Pubkey {
-    "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+    "AnchoL61Nt2sgXvrXYUHxRQgEgaJ4ueMg5xJQVyFJ5Gs"
         .parse()
         .unwrap()
 }

@@ -1,9 +1,9 @@
 [provider]
 cluster = "localnet"
-wallet = "~/.config/solana/id.json"
+wallet = "~/.config/miraland/id.json"
 
 [programs.localnet]
-errors = "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+errors = "AnchoL61Nt2sgXvrXYUHxRQgEgaJ4ueMg5xJQVyFJ5Gs"
 
 [scripts]
 test = "yarn run ts-mocha -t 1000000 tests/*.ts"

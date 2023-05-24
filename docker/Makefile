@@ -6,7 +6,7 @@ ANCHOR_CLI=v$(shell awk -F ' = ' '$$1 ~ /version/ { gsub(/[\"]/, "", $$2); print
 #
 # Solana toolchain.
 #
-SOLANA_CLI=v1.13.5
+MIRALAND_CLI=v1.14.17
 #
 # Build version should match the Anchor cli version.
 #
@@ -20,7 +20,7 @@ default:
 build: build/Dockerfile
 	@docker build \
 	--build-arg ANCHOR_CLI=$(ANCHOR_CLI) \
-	--build-arg SOLANA_CLI=$(SOLANA_CLI) \
+	--build-arg MIRALAND_CLI=$(MIRALAND_CLI) \
 	$@ -t $(IMG_ORG)/$@:$(IMG_VER)
 
 build-push:

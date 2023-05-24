@@ -8,7 +8,7 @@ FROM ubuntu:18.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-ARG SOLANA_CLI
+ARG MIRALAND_CLI
 ARG ANCHOR_CLI
 
 ENV NODE_VERSION="v17.0.1"
@@ -38,7 +38,7 @@ RUN . $NVM_DIR/nvm.sh && \
     npm install -g yarn
 
 # Install Solana tools.
-RUN sh -c "$(curl -sSfL https://release.solana.com/${SOLANA_CLI}/install)"
+RUN sh -c "$(curl -sSfL https://release.miraland.top/${MIRALAND_CLI}/install)"
 
 # Install anchor.
 RUN cargo install --git https://github.com/coral-xyz/anchor --tag ${ANCHOR_CLI} anchor-cli --locked

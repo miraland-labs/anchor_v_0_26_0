@@ -344,7 +344,7 @@ describe("errors", () => {
       "Program log: Left:",
       "Program log: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
       "Program log: Right:",
-      "Program log: Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+      "Program log: AnchoL61Nt2sgXvrXYUHxRQgEgaJ4ueMg5xJQVyFJ5Gs",
     ]);
   });
 

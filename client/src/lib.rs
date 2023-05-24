@@ -8,16 +8,16 @@ use anchor_lang::solana_program::pubkey::Pubkey;
 use anchor_lang::solana_program::system_program;
 use anchor_lang::{AccountDeserialize, Discriminator, InstructionData, ToAccountMetas};
 use regex::Regex;
-use solana_account_decoder::UiAccountEncoding;
-use solana_client::client_error::ClientError as SolanaClientError;
-use solana_client::pubsub_client::{PubsubClient, PubsubClientError, PubsubClientSubscription};
-use solana_client::rpc_client::RpcClient;
-use solana_client::rpc_config::{
+use miraland_account_decoder::UiAccountEncoding;
+use miraland_client::client_error::ClientError as SolanaClientError;
+use miraland_client::pubsub_client::{PubsubClient, PubsubClientError, PubsubClientSubscription};
+use miraland_client::rpc_client::RpcClient;
+use miraland_client::rpc_config::{
     RpcAccountInfoConfig, RpcProgramAccountsConfig, RpcSendTransactionConfig,
     RpcTransactionLogsConfig, RpcTransactionLogsFilter,
 };
-use solana_client::rpc_filter::{Memcmp, RpcFilterType};
-use solana_client::rpc_response::{Response as RpcResponse, RpcLogsResponse};
+use miraland_client::rpc_filter::{Memcmp, RpcFilterType};
+use miraland_client::rpc_response::{Response as RpcResponse, RpcLogsResponse};
 use solana_sdk::account::Account;
 use solana_sdk::commitment_config::CommitmentConfig;
 use solana_sdk::signature::{Signature, Signer};
@@ -30,7 +30,7 @@ use thiserror::Error;
 
 pub use anchor_lang;
 pub use cluster::Cluster;
-pub use solana_client;
+pub use miraland_client;
 pub use solana_sdk;
 
 mod cluster;

@@ -7,7 +7,7 @@ use heck::ToSnakeCase;
 use reqwest::Url;
 use serde::de::{self, MapAccess, Visitor};
 use serde::{Deserialize, Deserializer, Serialize};
-use solana_cli_config::{Config as SolanaConfig, CONFIG_FILE};
+use miraland_cli_config::{Config as SolanaConfig, CONFIG_FILE};
 use solana_sdk::pubkey::Pubkey;
 use solana_sdk::signature::{Keypair, Signer};
 use std::collections::{BTreeMap, HashMap};
@@ -271,7 +271,7 @@ impl<T> std::ops::DerefMut for WithPath<T> {
 #[derive(Debug, Default)]
 pub struct Config {
     pub anchor_version: Option<String>,
-    pub solana_version: Option<String>,
+    pub miraland_version: Option<String>,
     pub features: FeaturesConfig,
     pub registry: RegistryConfig,
     pub provider: ProviderConfig,
@@ -335,7 +335,7 @@ pub enum BootstrapMode {
 #[derive(Debug, Clone)]
 pub struct BuildConfig {
     pub verifiable: bool,
-    pub solana_version: Option<String>,
+    pub miraland_version: Option<String>,
     pub docker_image: String,
     pub bootstrap: BootstrapMode,
 }
@@ -355,7 +355,7 @@ impl Config {
             .anchor_version
             .clone()
             .unwrap_or_else(|| crate::DOCKER_BUILDER_VERSION.to_string());
-        format!("projectserum/build:v{}", ver)
+        format!("miralandlabs/build:v{}", ver)
     }
 
     pub fn discover(cfg_override: &ConfigOverride) -> Result<Option<WithPath<Config>>> {
@@ -415,7 +415,7 @@ impl Config {
 #[derive(Debug, Serialize, Deserialize)]
 struct _Config {
     anchor_version: Option<String>,
-    solana_version: Option<String>,
+    miraland_version: Option<String>,
     features: Option<FeaturesConfig>,
     programs: Option<BTreeMap<String, BTreeMap<String, serde_json::Value>>>,
     registry: Option<RegistryConfig>,
@@ -491,7 +491,7 @@ impl ToString for Config {
         };
         let cfg = _Config {
             anchor_version: self.anchor_version.clone(),
-            solana_version: self.solana_version.clone(),
+            miraland_version: self.miraland_version.clone(),
             features: Some(self.features.clone()),
             registry: Some(self.registry.clone()),
             provider: Provider {
@@ -520,7 +520,7 @@ impl FromStr for Config {
             .map_err(|e| anyhow::format_err!("Unable to deserialize config: {}", e.to_string()))?;
         Ok(Config {
             anchor_version: cfg.anchor_version,
-            solana_version: cfg.solana_version,
+            miraland_version: cfg.miraland_version,
             features: cfg.features.unwrap_or_default(),
             registry: cfg.registry.unwrap_or_default(),
             provider: ProviderConfig {
@@ -536,11 +536,11 @@ impl FromStr for Config {
     }
 }
 
-pub fn get_solana_cfg_url() -> Result<String, io::Error> {
+pub fn get_miraland_cfg_url() -> Result<String, io::Error> {
     let config_file = CONFIG_FILE.as_ref().ok_or_else(|| {
         io::Error::new(
             io::ErrorKind::NotFound,
-            "Default Solana config was not found",
+            "Default Miraland config was not found",
         )
     })?;
     SolanaConfig::load(config_file).map(|config| config.json_rpc_url)
@@ -1194,7 +1194,7 @@ impl AnchorPackage {
     }
 }
 
-crate::home_path!(WalletPath, ".config/solana/id.json");
+crate::home_path!(WalletPath, ".config/miraland/id.json");
 
 #[cfg(test)]
 mod tests {

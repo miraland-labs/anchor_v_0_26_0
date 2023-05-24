@@ -1,5 +1,5 @@
 [package]
-name = "anchor-lang"
+name = "solarti-anchor-lang"
 version = "0.26.0"
 authors = ["Serum Foundation <foundation@projectserum.com>"]
 repository = "https://github.com/coral-xyz/anchor"
@@ -40,6 +40,10 @@ arrayref = "0.3.6"
 base64 = "0.13.0"
 borsh = "0.9"
 bytemuck = "1.4.0"
-solana-program = "1.13.5"
+miraland-program = "1.14.17-rc5"
 thiserror = "1.0.20"
 bincode = "1.3.3"
+
+[lib]
+crate-type = ["lib"]
+name = "anchor_lang"

@@ -1,5 +1,5 @@
 [package]
-name = "anchor-spl"
+name = "solarti-anchor-spl"
 version = "0.26.0"
 authors = ["Serum Foundation <foundation@projectserum.com>"]
 rust-version = "1.59"
@@ -10,20 +10,20 @@ description = "CPI clients for SPL programs"
 [features]
 default = ["mint", "token", "associated_token"]
 mint = []
-token = ["spl-token"]
-associated_token = ["spl-associated-token-account"]
+token = ["solarti-token"]
+associated_token = ["solarti-associated-token-account"]
 governance = []
 shmem = []
 stake = ["borsh"]
 devnet = []
-metadata = ["mpl-token-metadata"]
+metadata = ["miraplex-token-metadata"]
 dex = ["serum_dex"]
 
 [dependencies]
-anchor-lang = { path = "../lang", version = "0.26.0", features = ["derive"] }
+anchor-lang = { path = "../lang", package = "solarti-anchor-lang", version = "0.26.0", features = ["derive"] }
 borsh = { version = "^0.9", optional = true }
 serum_dex = { git = "https://github.com/openbook-dex/program/", rev = "1be91f2", version = "0.4.0", features = ["no-entrypoint"], optional = true }
-solana-program = "1.13.5"
-spl-token = { version = "3.5.0", features = ["no-entrypoint"], optional = true }
-spl-associated-token-account = { version = "1.1.1", features = ["no-entrypoint"], optional = true }
-mpl-token-metadata = { version = "1.4.3", optional = true, features = ["no-entrypoint"] }
+miraland-program = "1.14.17-rc5"
+solarti-token = { version = "3.5.4", features = ["no-entrypoint"], optional = true }
+solarti-associated-token-account = { version = "1.1.6", features = ["no-entrypoint"], optional = true }
+miraplex-token-metadata = { version = "^1.7.1", optional = true, features = ["no-entrypoint"] }

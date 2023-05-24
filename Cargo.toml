@@ -1,7 +1,7 @@
 [profile.release]
 lto = true
 
-[profile.release.package.anchor-cli]
+[profile.release.package.solarti-anchor-cli]
 codegen-units = 1
 
 [workspace]

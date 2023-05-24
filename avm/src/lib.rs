@@ -91,10 +91,10 @@ pub fn install_version(version: &Version, force: bool) -> Result<()> {
         .args([
             "install",
             "--git",
-            "https://github.com/coral-xyz/anchor",
+            "https://github.com/miraland-labs/anchor_v_0_26_0",
             "--tag",
             &format!("v{}", &version),
-            "anchor-cli",
+            "solarti-anchor-cli",
             "--locked",
             "--root",
             AVM_HOME.to_str().unwrap(),
@@ -171,8 +171,8 @@ pub fn fetch_versions() -> Vec<semver::Version> {
 
     let client = reqwest::blocking::Client::new();
     let versions: Vec<Release> = client
-        .get("https://api.github.com/repos/coral-xyz/anchor/tags")
-        .header(USER_AGENT, "avm https://github.com/coral-xyz/anchor")
+        .get("https://api.github.com/repos/miraland-labs/anchor_v_0_26_0/tags")
+        .header(USER_AGENT, "avm https://github.com/miraland-labs/anchor_v_0_26_0")
         .send()
         .unwrap()
         .json()
