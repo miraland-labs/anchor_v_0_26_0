@@ -9,7 +9,7 @@ import {
   Commitment,
   SendTransactionError,
   SendOptions,
-} from "@solana/web3.js";
+} from "@solarti/web3.js";
 import { bs58 } from "./utils/bytes/index.js";
 import { isBrowser } from "./utils/common.js";
 import {

@@ -1,4 +1,4 @@
-import { PublicKey } from "@solana/web3.js";
+import { PublicKey } from "@solarti/web3.js";
 import { Idl, IdlAccount } from "../../idl.js";
 import { SimulateFn } from "./simulate.js";
 import {

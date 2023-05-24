@@ -1,7 +1,7 @@
 {
-  "name": "@project-serum/anchor",
-  "version": "0.26.0",
-  "description": "Anchor client",
+  "name": "@solarti/anchor",
+  "version": "0.26.0-rc.1",
+  "description": "Anchor client Solarti adaption",
   "module": "./dist/esm/index.js",
   "main": "./dist/cjs/index.js",
   "browser": "./dist/browser/index.js",
@@ -33,8 +33,8 @@
     "test": "jest tests --detectOpenHandles"
   },
   "dependencies": {
-    "@coral-xyz/borsh": "^0.26.0",
-    "@solana/web3.js": "^1.68.0",
+    "@solarti/borsh": "^0.26.0-rc.1",
+    "@solarti/web3.js": "^0.1.5-rc.1",
     "base64-js": "^1.5.1",
     "bn.js": "^5.1.2",
     "bs58": "^4.0.1",

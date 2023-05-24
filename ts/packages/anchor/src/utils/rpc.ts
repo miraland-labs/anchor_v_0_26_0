@@ -14,7 +14,7 @@ import {
   SimulatedTransactionResponse,
   SendTransactionError,
   Context,
-} from "@solana/web3.js";
+} from "@solarti/web3.js";
 import { chunks } from "../utils/common.js";
 import { Address, translateAddress } from "../program/common.js";
 import Provider, { getProvider, Wallet } from "../provider.js";
@@ -154,7 +154,7 @@ async function getMultipleAccountsAndContextCore(
   return accounts;
 }
 
-// copy from @solana/web3.js that has a commitment param
+// copy from @solarti/web3.js that has a commitment param
 export async function simulateTransaction(
   connection: Connection,
   transaction: Transaction,
@@ -214,7 +214,7 @@ export async function simulateTransaction(
   return res.result;
 }
 
-// copy from @solana/web3.js
+// copy from @solarti/web3.js
 function jsonRpcResult<T, U>(schema: Struct<T, U>) {
   return coerce(createRpcResult(schema), UnknownRpcResult, (value) => {
     if ("error" in value) {
@@ -228,10 +228,10 @@ function jsonRpcResult<T, U>(schema: Struct<T, U>) {
   });
 }
 
-// copy from @solana/web3.js
+// copy from @solarti/web3.js
 const UnknownRpcResult = createRpcResult(unknown());
 
-// copy from @solana/web3.js
+// copy from @solarti/web3.js
 function createRpcResult<T, U>(result: Struct<T, U>) {
   return union([
     pick({
@@ -251,7 +251,7 @@ function createRpcResult<T, U>(result: Struct<T, U>) {
   ]);
 }
 
-// copy from @solana/web3.js
+// copy from @solarti/web3.js
 function jsonRpcResultAndContext<T, U>(value: Struct<T, U>) {
   return jsonRpcResult(
     pick({
@@ -263,7 +263,7 @@ function jsonRpcResultAndContext<T, U>(value: Struct<T, U>) {
   );
 }
 
-// copy from @solana/web3.js
+// copy from @solarti/web3.js
 const SimulatedTransactionResponseStruct = jsonRpcResultAndContext(
   pick({
     err: nullable(union([pick({}), string()])),

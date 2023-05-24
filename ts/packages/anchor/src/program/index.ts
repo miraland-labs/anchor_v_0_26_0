@@ -1,5 +1,5 @@
 import { inflate } from "pako";
-import { PublicKey } from "@solana/web3.js";
+import { PublicKey } from "@solarti/web3.js";
 import Provider, { getProvider } from "../provider.js";
 import { Idl, idlAddress, decodeIdlAccount, IdlInstruction } from "../idl.js";
 import { Coder, BorshCoder } from "../coder/index.js";

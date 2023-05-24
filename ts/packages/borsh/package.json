@@ -1,7 +1,7 @@
 {
-  "name": "@coral-xyz/borsh",
-  "version": "0.26.0",
-  "description": "Anchor Borsh",
+  "name": "@solarti/borsh",
+  "version": "0.26.0-rc.1",
+  "description": "Anchor Borsh Solarti adaption",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
@@ -24,7 +24,7 @@
     "buffer-layout": "^1.2.0"
   },
   "peerDependencies": {
-    "@solana/web3.js": "^1.68.0"
+    "@solarti/web3.js": "^0.1.5-rc.1"
   },
   "files": [
     "dist"
